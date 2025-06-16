@@ -25,3 +25,7 @@ Route::get('/about', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
+
+Route::get('/payment', function () {
+    return view('payment');
+});

@@ -117,7 +117,9 @@
                     <div class="input-group">
                         <span>Cari Admin</span>
                     </div>
+                    <a href="/payment">
                     <button class="booking-btn" onclick="calculatePrice()">Booking Now</button>
+                    </a>
                 </div>
             </div>
 
