@@ -6,7 +6,7 @@
     <title>Bayang Brothers</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    @vite(['resources/css/detailkamar.css', 'resources/js/app.js'])
+    @vite(['resources/css/detailkamar.css', 'resources/js/detailkamar.js'])
     @livewireStyles
 </head>
 <body>
@@ -79,28 +79,43 @@
                     </div>
 
                     <div class="price">
-                        <span class="price-label">Price:</span>
-                    </div>
+    <span class="price-label">Price: </span>
+    <span id="total-price">Rp 0</span>
+    <div id="price-details" style="display: none;">
+        <small id="nights-info"></small>
+    </div>
+</div>
                 </div>
             </div>
 
             <!-- Booking Section -->
-            <div class="booking-section">
-                <div class="booking-inputs">
-                    <div class="input-group">
-                        <i class="fas fa-calendar"></i>
-                        <span>Check In - Check Out</span>
-                    </div>
-                    <div class="input-group">
-                        <i class="fas fa-user"></i>
-                        <span>Person</span>
-                    </div>
-                    <div class="input-group">
-                        <span>Cari Admin</span>
-                    </div>
-                    <button class="booking-btn">Booking Now</button>
-                </div>
+<div class="booking-section">
+    <div class="booking-inputs">
+        <div class="input-group">
+            <i class="fas fa-calendar"></i>
+            <div class="date-inputs">
+                <input type="date" id="checkin" placeholder="Check In">
+                <span class="date-separator">-</span>
+                <input type="date" id="checkout" placeholder="Check Out">
             </div>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <select id="persons">
+                <option value="1">1 Person</option>
+                <option value="2">2 Persons</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <span>Cari Admin</span>
+        </div>
+        <button class="booking-btn" onclick="calculatePrice()">Booking Now</button>
+    </div>
+</div>
+
+
         </div>
     </main>
 
