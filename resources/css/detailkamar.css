@@ -288,48 +288,48 @@ body {
     .facilities {
         grid-template-columns: 1fr;
     }
-.date-inputs {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-}
+    .date-inputs {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
 
-.date-inputs input[type="date"] {
-    border: none;
-    background: transparent;
-    color: inherit;
-    font-family: inherit;
-    flex: 1;
-}
+    .date-inputs input[type="date"] {
+        border: none;
+        background: transparent;
+        color: inherit;
+        font-family: inherit;
+        flex: 1;
+    }
 
-.date-inputs input[type="date"]:focus {
-    outline: none;
-}
+    .date-inputs input[type="date"]:focus {
+        outline: none;
+    }
 
-.date-separator {
-    color: #666;
-    font-weight: bold;
-}
+    .date-separator {
+        color: #666;
+        font-weight: bold;
+    }
 
-#persons {
-    border: none;
-    background: transparent;
-    color: inherit;
-    font-family: inherit;
-    width: 100%;
-}
+    #persons {
+        border: none;
+        background: transparent;
+        color: inherit;
+        font-family: inherit;
+        width: 100%;
+    }
 
-#persons:focus {
-    outline: none;
-}
+    #persons:focus {
+        outline: none;
+    }
 
-#price-details {
-    margin-top: 5px;
-}
+    #price-details {
+        margin-top: 5px;
+    }
 
-#price-details small {
-    color: #666;
-    font-size: 0.9em;
-}
+    #price-details small {
+        color: #666;
+        font-size: 0.9em;
+    }
 }
