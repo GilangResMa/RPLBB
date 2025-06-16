@@ -22,8 +22,8 @@
             </div>
             
             <!-- Navigation -->
-            <nav class="bg-red-600 flex items-center space-x-6">
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+            <nav class="flex items-center space-x-6">
+                <a href="#" class="flex items-center space-x-1 hover:text-red-200 border-b-2 border-white">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
@@ -39,64 +39,45 @@
                     <i class="fas fa-question-circle"></i>
                     <span>FAQ</span>
                 </a>
+                <a href="login">
                 <button class="bg-white text-red-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
                     Login
                 </button>
-                
+                </a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex items-center justify-center min-h-screen -mt-20 pt-20">
-        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Login</h2>
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             
-            <form class="space-y-4">
-                <!-- Name Field -->
-                <div>
-                    <input 
-                        type="text" 
-                        placeholder="Name" 
-                        class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
-                        required
-                    >
-                </div>
-
-                <!-- Email Field -->
-                <div>
-                    <input 
-                        type="email" 
-                        placeholder="Email" 
-                        class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
-                        required
-                    >
-                </div>
-
-                <!-- Password Field -->
-                <div>
-                    <input 
-                        type="password" 
-                        placeholder="Password" 
-                        class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
-                        required
-                    >
-                </div>
-
-                <!-- Sign In Button -->
-                <button 
-                    type="submit" 
-                    class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-200 mt-6"
-                >
-                    Sign In
-                </button>
-
-                <!-- Sign Up Link -->
-                <p class="text-center text-gray-600 mt-4">
-                    Don't Have an Account? 
-                    <a href="register" class="text-gray-800 font-semibold hover:text-red-600">Sign Up</a>
+            <!-- Left Content -->
+            <div class="bg-gray-300 p-8 rounded-lg">
+                <p class="text-gray-800 text-justify leading-relaxed mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </form>
+                
+                <!-- Go to Room Button -->
+                <div class="text-center">
+                    <a href="detailkamar">
+                    <button class="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-200">
+                        Go to Room
+                    </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content - Images -->
+            <div class="space-y-4">
+                <div class="h-42 bg-gray-400 rounded-lg overflow-hidden">
+                    <img 
+                    src="{{ asset('img/home.jpg') }}"  
+                    alt="Home"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    >
+                </div>
+            </div>
         </div>
     </main>
 

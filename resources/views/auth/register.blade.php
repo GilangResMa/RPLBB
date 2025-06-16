@@ -39,9 +39,11 @@
                     <i class="fas fa-question-circle"></i>
                     <span>FAQ</span>
                 </a>
+                <a href="login">
                 <button class="bg-white text-red-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
                     Login
                 </button>
+                </a>
             </nav>
         </div>
     </header>
@@ -93,7 +95,7 @@
                 <!-- Sign In Link -->
                 <p class="text-center text-gray-600 mt-4">
                     Already Have an Account? 
-                    <a href="#" class="text-gray-800 font-semibold hover:text-red-600">Sign In</a>
+                    <a href="login" class="text-gray-800 font-semibold hover:text-red-600">Sign In</a>
                 </p>
             </form>
         </div>
