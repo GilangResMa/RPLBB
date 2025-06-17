@@ -23,19 +23,19 @@
             
             <!-- Navigation -->
             <nav class="bg-red-600 flex items-center space-x-6">
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="/" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="detailkamar" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-bed"></i>
                     <span>Room</span>
                 </a>
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="about" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="faq" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-question-circle"></i>
                     <span>FAQ</span>
                 </a>

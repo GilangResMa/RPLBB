@@ -5,35 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Bayang Brothers</title>
-    <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    @vite(['resources/css/payment.css', 'resources/js/payment.js'])
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-home"></i>
-                <span>Bayang Brothers</span>
+    <header class="bg-red-600 text-white px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-home text-xl"></i>
+                <div>
+                    <div class="font-bold text-lg">Bayang Brothers</div>
+                </div>
             </div>
-            <nav class="nav">
-                <a href="/" class="nav-link">
-                    <i class="fas fa-home"></i> Home
+            
+            <!-- Navigation -->
+            <nav class="flex items-center space-x-6">
+                <a href="/" class="flex items-center space-x-1 hover:text-red-200 border-b-2 border-white">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
                 </a>
-                <a href="#" class="nav-link">
-                    <i class="fas fa-bed"></i> Room
+                <a href="detailkamar" class="flex items-center space-x-1 hover:text-red-200">
+                    <i class="fas fa-bed"></i>
+                    <span>Room</span>
                 </a>
-                <a href="/about" class="nav-link">
-                    <i class="fas fa-info-circle"></i> About
+                <a href="about" class="flex items-center space-x-1 hover:text-red-200">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
                 </a>
-                <a href="#" class="nav-link">
-                    <i class="fas fa-question-circle"></i> FAQ
+                <a href="faq" class="flex items-center space-x-1 hover:text-red-200">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </a>
+                <a href="login">
+                <button class="bg-white text-red-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
+                    Login
+                </button>
                 </a>
             </nav>
-            <button class="login-btn">Login</button>
         </div>
     </header>
 
