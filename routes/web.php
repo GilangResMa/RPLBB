@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Auth\CustomerRegisterController;
+use App\Http\Controllers\Auth\CustomerLoginController;
 
 Route::get('/', function () {
     return view('home');
@@ -34,3 +36,7 @@ Route::get('/payment', function () {
 Route::post('/api/process-payment', [PaymentController::class, 'processPayment']);
 Route::post('/midtrans/notification', [PaymentController::class, 'handleNotification']);
 Route::post('/create-payment', [PaymentController::class, 'createPayment']);
+
+Route::post('/register', [CustomerRegisterController::class, 'store'])->name('register');
+
+Route::post('/login', [CustomerLoginController::class, 'login'])->name('customer.login');

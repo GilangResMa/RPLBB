@@ -55,34 +55,37 @@
         <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Sign Up</h2>
 
-            <form class="space-y-4">
+            <form class="space-y-4" method="POST" action="{{ route('register') }}">
+                @csrf
                 <!-- Name Field -->
                 <div>
-                    <input type="text" placeholder="Name"
+                    <input name="name" type="text" placeholder="Name"
                         class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
                         required>
                 </div>
-
                 <!-- Email Field -->
                 <div>
-                    <input type="email" placeholder="Email"
+                    <input name="email" type="email" placeholder="Email"
                         class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
                         required>
                 </div>
-
+                <!-- Kontak Field -->
+                <div>
+                    <input name="kontak" type="text" placeholder="Nomor Telepon"
+                        class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        required>
+                </div>
                 <!-- Password Field -->
                 <div>
-                    <input type="password" placeholder="Password"
+                    <input name="password" type="password" placeholder="Password"
                         class="w-full px-4 py-3 bg-gray-200 border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
                         required>
                 </div>
-
                 <!-- Sign Up Button -->
                 <button type="submit"
                     class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-200 mt-6">
                     Sign Up
                 </button>
-
                 <!-- Sign In Link -->
                 <p class="text-center text-gray-600 mt-4">
                     Already Have an Account?
