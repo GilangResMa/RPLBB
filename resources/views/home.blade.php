@@ -23,19 +23,19 @@
             
             <!-- Navigation -->
             <nav class="flex items-center space-x-6">
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200 border-b-2 border-white">
+                <a href="/" class="flex items-center space-x-1 hover:text-red-200 border-b-2 border-white">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="detailkamar" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-bed"></i>
                     <span>Room</span>
                 </a>
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="about" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
-                <a href="#" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="faq" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-question-circle"></i>
                     <span>FAQ</span>
                 </a>
@@ -102,10 +102,10 @@
             
             <!-- Footer Links -->
             <div class="flex justify-center space-x-6 text-sm">
-                <a href="#" class="hover:text-red-200">Home</a>
-                <a href="#" class="hover:text-red-200">Room</a>
-                <a href="#" class="hover:text-red-200">About</a>
-                <a href="#" class="hover:text-red-200">FAQ</a>
+                <a href="/" class="hover:text-red-200">Home</a>
+                <a href="detailkamar" class="hover:text-red-200">Room</a>
+                <a href="about" class="hover:text-red-200">About</a>
+                <a href="faq" class="hover:text-red-200">FAQ</a>
             </div>
             
             <p class="text-xs mt-4">Copyright ©2025 Bayang Brothers</p>
