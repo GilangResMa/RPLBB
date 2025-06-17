@@ -108,25 +108,16 @@
             
             <!-- Social Media Icons -->
             <div class="flex justify-center space-x-4 mb-4">
-                <a href="#" class="text-white hover:text-red-200">
+                <a href="tel:+6281392640030" class="text-white hover:text-red-200">
                     <i class="fas fa-phone"></i>
                 </a>
-                <a href="#" class="text-white hover:text-red-200">
+                <a href="https://instagram.com/bayangbrothers" class="text-white hover:text-red-200">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="text-white hover:text-red-200">
+                <a href="https://wa.me/6281392640030" class="text-white hover:text-red-200">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
-            
-            <!-- Footer Links -->
-            <div class="flex justify-center space-x-6 text-sm">
-                <a href="#" class="hover:text-red-200">Home</a>
-                <a href="#" class="hover:text-red-200">Room</a>
-                <a href="#" class="hover:text-red-200">About</a>
-                <a href="#" class="hover:text-red-200">FAQ</a>
-            </div>
-            
             <p class="text-xs mt-4">Copyright ©2025 Bayang Brothers</p>
         </div>
     </footer>

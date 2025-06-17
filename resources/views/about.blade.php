@@ -18,8 +18,7 @@
             <div class="flex items-center space-x-2">
                 <i class="fas fa-home text-xl"></i>
                 <div>
-                    <div class="font-bold text-lg">Bayang</div>
-                    <div class="text-sm">Brothers</div>
+                    <div class="font-bold text-lg">Bayang Brothers</div>
                 </div>
             </div>
             
@@ -87,7 +86,7 @@
                                 <div class="flex items-center space-x-3">
                                     <i class="fab fa-whatsapp text-green-500 text-xl w-6"></i>
                                     <div>
-                                        <div class="text-sm text-gray-600 font-medium">WA :</div>
+                                        <div class="text-sm text-gray-600 font-medium"></div>
                                         <a href="https://wa.me/6281392640030" target="_blank" class="text-gray-800 hover:text-red-600 transition-colors">
                                             +6281392640030
                                         </a>
@@ -99,7 +98,7 @@
                                 <div class="flex items-center space-x-3">
                                     <i class="fab fa-instagram text-pink-500 text-xl w-6"></i>
                                     <div>
-                                        <div class="text-sm text-gray-600 font-medium">IG :</div>
+                                        <div class="text-sm text-gray-600 font-medium"></div>
                                         <a href="https://instagram.com/bayangbrothers" target="_blank" class="text-gray-800 hover:text-red-600 transition-colors">
                                             bayangbrothers
                                         </a>
@@ -153,30 +152,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-red-600 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-xl font-bold mb-2">Bayang Brothers</h3>
-            <p class="text-red-100 mb-4">Bayang Brothers is a booking room service operating in Yogyakarta.</p>
-            <div class="social-links flex justify-center space-x-4 mb-4">
-                <a href="tel:+6281392640030" class="text-white hover:text-red-200 text-xl">
+    <footer class="bg-red-600 text-white py-6 mt-auto">
+        <div class="text-center">
+            <h3 class="font-bold text-lg mb-2">Bayang Brothers</h3>
+            <p class="text-sm mb-4">Bayang Brothers is a booking room service operating in Yogyakarta.</p>
+            
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="tel:+6281392640030" class="text-white hover:text-red-200">
                     <i class="fas fa-phone"></i>
                 </a>
-                <a href="https://instagram.com/bayangbrothers" target="_blank" class="text-white hover:text-red-200 text-xl">
+                <a href="https://instagram.com/bayangbrothers" class="text-white hover:text-red-200">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://wa.me/6281392640030" target="_blank" class="text-white hover:text-red-200 text-xl">
+                <a href="https://wa.me/6281392640030" class="text-white hover:text-red-200">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
-            <div class="footer-nav flex justify-center space-x-6 mb-4">
-                <a href="/" class="text-red-100 hover:text-white">Home</a>
-                <a href="/detailkamar" class="text-red-100 hover:text-white">Room</a>
-                <a href="/about" class="text-red-100 hover:text-white">About</a>
-                <a href="/faq" class="text-red-100 hover:text-white">FAQ</a>
-            </div>
-            <div class="copyright border-t border-red-500 pt-4">
-                <p class="text-red-100">Copyright @2025 Bayang Brothers</p>
-            </div>
+            <p class="text-xs mt-4">Copyright ©2025 Bayang Brothers</p>
         </div>
     </footer>
     @livewireScripts

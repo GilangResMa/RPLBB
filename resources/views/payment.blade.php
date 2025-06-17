@@ -217,18 +217,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3>Bayang Brothers</h3>
-            <p>Bayang Brothers is a booking room service operating in Yogyakarta.</p>
-            <div class="social-links">
-                <a href="#"><i class="fas fa-phone"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <footer class="bg-red-600 text-white py-6 mt-auto">
+        <div class="text-center">
+            <h3 class="font-bold text-lg mb-2">Bayang Brothers</h3>
+            <p class="text-sm mb-4">Bayang Brothers is a booking room service operating in Yogyakarta.</p>
+            
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="tel:+6281392640030" class="text-white hover:text-red-200">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://instagram.com/bayangbrothers" class="text-white hover:text-red-200">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/6281392640030" class="text-white hover:text-red-200">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright @2025 Bayang Brothers</p>
+            <p class="text-xs mt-4">Copyright ©2025 Bayang Brothers</p>
         </div>
     </footer>
 

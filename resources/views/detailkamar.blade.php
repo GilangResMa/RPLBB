@@ -20,8 +20,7 @@
             <div class="flex items-center space-x-2">
                 <i class="fas fa-home text-xl"></i>
                 <div>
-                    <div class="font-bold text-lg">Bayang</div>
-                    <div class="text-sm">Brothers</div>
+                    <div class="font-bold text-lg">Bayang Brothers</div>
                 </div>
             </div>
             
@@ -136,13 +135,13 @@
 
             <!-- Booking Section -->
             <div class="booking-section bg-white rounded-lg shadow-lg p-6">
-                <div class="booking-inputs grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                <div class="booking-inputs grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
                     <div class="input-group">
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             <i class="fas fa-calendar text-red-600 mr-2"></i>
                             Check In - Check Out
                         </label>
-                        <div class="date-inputs flex items-center space-x-2">
+                        <div class="date-inputs flex items-center">
                             <input type="date" id="checkin" class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
                             <span class="text-gray-500">-</span>
                             <input type="date" id="checkout" class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
@@ -154,7 +153,7 @@
                             <i class="fas fa-user text-red-600 mr-2"></i>
                             Person
                         </label>
-                        <select id="persons" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <select id="persons" class="w-75 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
                             <option value="1">1 Person</option>
                             <option value="2">2 Persons</option>
                             <option value="3">3 Persons</option>
@@ -183,30 +182,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-red-600 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-xl font-bold mb-2">Bayang Brothers</h3>
-            <p class="text-red-100 mb-4">Bayang Brothers is a booking room service operating in Yogyakarta.</p>
-            <div class="social-links flex justify-center space-x-4 mb-4">
-                <a href="#" class="text-white hover:text-red-200 text-xl">
+    <footer class="bg-red-600 text-white py-6 mt-auto">
+        <div class="text-center">
+            <h3 class="font-bold text-lg mb-2">Bayang Brothers</h3>
+            <p class="text-sm mb-4">Bayang Brothers is a booking room service operating in Yogyakarta.</p>
+            
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="tel:+6281392640030" class="text-white hover:text-red-200">
                     <i class="fas fa-phone"></i>
                 </a>
-                <a href="#" class="text-white hover:text-red-200 text-xl">
+                <a href="https://instagram.com/bayangbrothers" class="text-white hover:text-red-200">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="text-white hover:text-red-200 text-xl">
+                <a href="https://wa.me/6281392640030" class="text-white hover:text-red-200">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
-            <div class="footer-nav flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-red-100 hover:text-white">Home</a>
-                <a href="#" class="text-red-100 hover:text-white">Room</a>
-                <a href="#" class="text-red-100 hover:text-white">About</a>
-                <a href="#" class="text-red-100 hover:text-white">FAQ</a>
-            </div>
-            <div class="copyright border-t border-red-500 pt-4">
-                <p class="text-red-100">Copyright @2025 Bayang Brothers</p>
-            </div>
+            <p class="text-xs mt-4">Copyright ©2025 Bayang Brothers</p>
         </div>
     </footer>
 
