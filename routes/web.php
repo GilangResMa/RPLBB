@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
     return view('home');
@@ -29,3 +30,7 @@ Route::get('/faq', function () {
 Route::get('/payment', function () {
     return view('payment');
 });
+
+Route::post('/api/process-payment', [PaymentController::class, 'processPayment']);
+Route::post('/midtrans/notification', [PaymentController::class, 'handleNotification']);
+Route::post('/create-payment', [PaymentController::class, 'createPayment']);
