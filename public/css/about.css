@@ -1,4 +1,4 @@
-/* Additional custom styles for About page */
+@import "tailwindcss";
 
 .about-section {
     max-width: 1200px;

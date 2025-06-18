@@ -1,4 +1,5 @@
-/* Additional custom styles */
+@import "tailwindcss";
+
 .image-gallery {
     padding: 1rem;
 }
