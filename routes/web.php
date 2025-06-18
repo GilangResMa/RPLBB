@@ -47,5 +47,5 @@ Route::post('/custregister', [CustomerController::class, 'register'])->name('cus
 Route::get('/login', [CustomerController::class, 'showLoginForm'])->name('login');
 Route::post('/custlogin', [CustomerController::class, 'authenticate'])->name('custlogin');
 
-Route::get('/profile', [CustomerController::class, 'showProfile'])->name('profile');
+Route::get('/profile', [CustomerController::class, 'showProfile'])->name('profile')->middleware('auth');
 Route::post('/logout', [CustomerController::class, 'logout'])->name('logout');

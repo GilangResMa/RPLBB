@@ -29,22 +29,22 @@
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-                <a href="detailkamar" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="/detailkamar" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-bed"></i>
                     <span>Room</span>
                 </a>
-                <a href="about" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="/about" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
-                <a href="faq" class="flex items-center space-x-1 hover:text-red-200">
+                <a href="/faq" class="flex items-center space-x-1 hover:text-red-200">
                     <i class="fas fa-question-circle"></i>
                     <span>FAQ</span>
                 </a>
                 
                 <!-- User Menu -->
                 <div class="relative">
-                    <button class="flex items-center space-x-2 bg-white text-red-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
+                    <button id="userMenuButton" class="flex items-center space-x-2 bg-white text-red-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-100">
                         <i class="fas fa-user"></i>
                         <span>{{ Auth::user()->namaPelanggan ?? 'User' }}</span>
                         <i class="fas fa-chevron-down text-xs"></i>
@@ -109,6 +109,8 @@
                                 {{ Auth::user()->kontakPelanggan ?? 'N/A' }}
                             </div>
                         </div>
+                    </div>
+                </div>
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 pt-6">
@@ -150,7 +152,7 @@
     <script>
         // Toggle dropdown menu
         document.addEventListener('DOMContentLoaded', function() {
-            const userButton = document.querySelector('button[id="userDropdown"]').previousElementSibling;
+            const userButton = document.getElementById('userMenuButton');
             const dropdown = document.getElementById('userDropdown');
             
             userButton.addEventListener('click', function() {

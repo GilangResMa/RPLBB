@@ -78,8 +78,18 @@ class CustomerController extends Controller
         ]);
     }
     // Profile
+
     public function showProfile()
     {
+        // Debug: pastikan user login
+        if (!Auth::user()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+        // Debug: tampilkan data user
+        // dd($user->toArray()); // Uncomment untuk debug
+
         return view('profile');
     }
 
