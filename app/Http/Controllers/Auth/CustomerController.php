@@ -30,6 +30,7 @@ class CustomerController extends Controller
             'emailPelanggan' => $request->email,
             'kontakPelanggan' => $request->kontak,
             'password' => Hash::make($request->password),
+            // 'password' => $request->password,
         ]);
 
         return redirect()->route('login')->with('success', 'Registration successful!');
@@ -62,6 +63,7 @@ class CustomerController extends Controller
         }
 
         // Debug: Cek password
+        // if (!Hash::check($request->password, $user->password)) {
         if (!Hash::check($request->password, $user->password)) {
             return back()->withErrors([
                 'email' => 'Password incorrect.',

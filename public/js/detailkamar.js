@@ -8,38 +8,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const bookingBtn = document.querySelector(".booking-btn");
 
     // Room pricing configuration
-    const ROOM_PRICE_PER_NIGHT = 250000; // Rp 250,000 per night
+    const ROOM_PRICE_PER_NIGHT = 150000; // Rp 150,000 per night
     const EXTRA_PERSON_PRICE = 50000; // Rp 50,000 per extra person per night
-    const TAX_RATE = 0.1; // 10% tax
+
+    // Show initial price per night
+    if (totalPriceElement) {
+        totalPriceElement.textContent = formatCurrency(ROOM_PRICE_PER_NIGHT) + "/malam";
+        if (nightsInfoElement) {
+            nightsInfoElement.textContent = "Harga per malam untuk 1 orang";
+        }
+        if (priceDetailsElement) {
+            priceDetailsElement.style.display = "block";
+        }
+    }
 
     // Set minimum date to today
     const today = new Date().toISOString().split("T")[0];
-    checkinInput.min = today;
+    if (checkinInput) checkinInput.min = today;
 
-    checkinInput.addEventListener("change", function () {
-        // Set checkout minimum date to one day after checkin
-        const checkinDate = new Date(this.value);
-        checkinDate.setDate(checkinDate.getDate() + 1);
-        checkoutInput.min = checkinDate.toISOString().split("T")[0];
-        calculatePrice();
-    });
+    if (checkinInput) {
+        checkinInput.addEventListener("change", function () {
+            // Set checkout minimum date to one day after checkin
+            const checkinDate = new Date(this.value);
+            checkinDate.setDate(checkinDate.getDate() + 1);
+            if (checkoutInput) {
+                checkoutInput.min = checkinDate.toISOString().split("T")[0];
+            }
+            calculatePrice();
+        });
+    }
 
-    checkoutInput.addEventListener("change", calculatePrice);
-    personsSelect.addEventListener("change", calculatePrice);
+    if (checkoutInput) {
+        checkoutInput.addEventListener("change", calculatePrice);
+    }
+
+    if (personsSelect) {
+        personsSelect.addEventListener("change", calculatePrice);
+    }
 
     function calculatePrice() {
         const checkinDate = new Date(checkinInput.value);
         const checkoutDate = new Date(checkoutInput.value);
         const persons = parseInt(personsSelect.value);
 
+        // If no dates selected, show price per night
         if (!checkinInput.value || !checkoutInput.value) {
-            totalPriceElement.textContent = "Rp 0";
-            priceDetailsElement.style.display = "none";
+            // Extra charge mulai dari orang ke-3 (lebih dari 2 orang)
+            const extraPersons = persons > 2 ? persons - 2 : 0;
+            const basePrice = ROOM_PRICE_PER_NIGHT + (extraPersons * EXTRA_PERSON_PRICE);
+            
+            totalPriceElement.textContent = formatCurrency(basePrice) + "/malam";
+            if (nightsInfoElement) {
+                let priceInfo = `Harga per malam untuk ${persons} orang`;
+                if (extraPersons > 0) {
+                    priceInfo += ` (+${extraPersons} orang tambahan)`;
+                }
+                nightsInfoElement.textContent = priceInfo;
+            }
+            if (priceDetailsElement) {
+                priceDetailsElement.style.display = "block";
+            }
             return;
         }
 
         if (checkoutDate <= checkinDate) {
-            alert("Check-out date must be after check-in date");
+            alert("Tanggal check-out harus setelah tanggal check-in");
             checkoutInput.value = "";
             return;
         }
@@ -50,11 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Calculate prices
         const roomTotal = ROOM_PRICE_PER_NIGHT * nights;
-        const extraPersonTotal =
-            persons > 1 ? (persons - 1) * EXTRA_PERSON_PRICE * nights : 0;
-        const subtotal = roomTotal + extraPersonTotal;
-        const taxAmount = subtotal * TAX_RATE;
-        const totalAmount = subtotal + taxAmount;
+        const extraPersons = persons > 2 ? persons - 2 : 0;
+        const extraPersonTotal = extraPersons * EXTRA_PERSON_PRICE * nights;
+        const totalAmount = roomTotal + extraPersonTotal;
 
         // Store booking data in sessionStorage
         const bookingData = {
@@ -64,16 +95,23 @@ document.addEventListener("DOMContentLoaded", function () {
             nights: nights,
             roomPrice: roomTotal,
             extraPersonPrice: extraPersonTotal,
-            taxAmount: taxAmount,
             totalAmount: totalAmount,
         };
 
         sessionStorage.setItem("bookingData", JSON.stringify(bookingData));
 
-        // Update display
+        // Update display with total amount
         totalPriceElement.textContent = formatCurrency(totalAmount);
-        nightsInfoElement.textContent = `${nights} night(s) × ${persons} person(s)`;
-        priceDetailsElement.style.display = "block";
+        if (nightsInfoElement) {
+            let priceBreakdown = `${nights} malam × ${persons} orang`;
+            if (extraPersons > 0) {
+                priceBreakdown += ` (termasuk ${extraPersons} orang tambahan)`;
+            }
+            nightsInfoElement.textContent = priceBreakdown;
+        }
+        if (priceDetailsElement) {
+            priceDetailsElement.style.display = "block";
+        }
     }
 
     function formatCurrency(amount) {
@@ -85,25 +123,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Booking button click handler
-    bookingBtn.addEventListener("click", function (e) {
-        if (!checkinInput.value || !checkoutInput.value) {
-            e.preventDefault();
-            alert("Please select check-in and check-out dates");
-            return;
-        }
-
-        // Data will be passed via sessionStorage to payment page
-        calculatePrice();
-    });
+    if (bookingBtn) {
+        bookingBtn.addEventListener("click", function (e) {
+            if (!checkinInput.value || !checkoutInput.value) {
+                e.preventDefault();
+                alert("Silakan pilih tanggal check-in dan check-out");
+                return;
+            }
+            // Data will be passed via sessionStorage to payment page
+            calculatePrice();
+        });
+    }
 
     // WhatsApp admin contact
-    document
-        .querySelector("button:has(.fa-whatsapp)")
-        .addEventListener("click", function () {
+    const whatsappBtn = document.querySelector("button:has(.fa-whatsapp)");
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener("click", function () {
             const message = `Halo, saya ingin bertanya tentang pemesanan kamar.`;
-            const whatsappUrl = `https://wa.me/6281392640030?text=${encodeURIComponent(
-                message
-            )}`;
+            const whatsappUrl = `https://wa.me/6281392640030?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, "_blank");
         });
+    }
+
+    // Thumbnail image functionality
+    const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+    const mainImage = document.querySelector('.main-image img');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            mainImage.src = this.src;
+        });
+    });
 });
